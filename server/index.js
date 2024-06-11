@@ -12,10 +12,8 @@ const cors = require("cors");
 const {cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
-
 dotenv.config();
-const PORT = process.env.PORT || 4000;
-
+const PORT = process.env.PORT || 3000;
 //database connect
 database.connect();
 //middlewares
@@ -27,7 +25,7 @@ app.use(
 		credentials:true,
 	})
 )
-
+ 
 app.use(
 	fileUpload({
 		useTempFiles:true,
@@ -56,4 +54,4 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
 	console.log(`App is running at ${PORT}`)
 })
-
+ 

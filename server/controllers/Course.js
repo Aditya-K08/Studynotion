@@ -38,7 +38,7 @@ exports.createCourse = async (req, res) => {
 				message: "All Fields are Mandatory",
 			});
 		}
-		if (!status || status === undefined) {
+		if (!status || status === undefined) { 
 			status = "Draft";
 		}
 		// Check if the user is an instructor
@@ -50,7 +50,7 @@ exports.createCourse = async (req, res) => {
 			return res.status(404).json({
 				success: false,
 				message: "Instructor Details Not Found",
-			});
+			}); 
 		}
 
 		// Check if the tag given is valid
